@@ -1,6 +1,7 @@
 package br.com.surb.todolist.user.controller;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import br.com.surb.todolist.task.entities.TaskModel;
 import br.com.surb.todolist.user.entities.UserModel;
 import br.com.surb.todolist.user.repositories.IUserRepository;
 import org.springframework.http.HttpStatus;
@@ -32,7 +33,6 @@ public class UserController {
 
     userModel.setPassword(passwordHashred);
     UserModel user = userRepository.save(userModel);
-    System.out.println(userModel.getUsername());
     return ResponseEntity.status(HttpStatus.CREATED).body(user);
   }
 }

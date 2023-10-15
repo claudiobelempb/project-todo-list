@@ -3,6 +3,9 @@ package br.com.surb.todolist.user.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -11,7 +14,10 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_users")
-public class UserModel {
+public class UserModel implements Serializable {
+
+  @Serial
+  private static final long serialVersionUID = 3880175677659414000L;
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
