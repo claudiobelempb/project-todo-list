@@ -6,7 +6,7 @@ RUN apt-get install openjdk-17-jdk -y
 COPY . .
 
 RUN apt-get install maven -y
-RUN nvm clear install
+RUN mvn clear install
 
 FROM openjdk:17-jdk-slim
 
